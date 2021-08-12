@@ -1,0 +1,1 @@
+source /f/django_root/prototype_fireSafty/fireSafty_venv/Scripts/activate/activate
