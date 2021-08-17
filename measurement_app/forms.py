@@ -1,4 +1,5 @@
 from django import forms
+from .models import officeDetail
 '''
 from .models import ModelName
 class ModelNameForm(forms.ModelForm):
@@ -6,3 +7,7 @@ class ModelNameForm(forms.ModelForm):
         model = ModelName
         fields = '__all__'
 '''
+class officeDetailForm(forms.ModelForm):
+    class Meta:
+        model = officeDetail
+        fields = '__all__'
