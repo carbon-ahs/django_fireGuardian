@@ -10,6 +10,19 @@ from .forms import
 '''
 app_name = 'Fire Guardian'
 
+def office_all_equpments(office, fe_param):
+    sz = office.office_size
+
+    if office.office_type == 'in':
+        required_extenguiter = office.present_fire_extinguisher_number - math.ceil(sz/1000) 
+    elif office.office_type == 'cm':
+        required_extenguiter = math.ceil(sz/3000) 
+    elif office.office_type == 'rs':
+        required_extenguiter = math.ceil(sz/5000) 
+ 
+    #office_dict = {'type': office
+
+
 def home(request):
     contex = {
         'key': 'value',
@@ -55,13 +68,6 @@ def last_entry_view(request):
         raise Http404("No Model, Pls check migration.") 
 
     last_office = all_office.reverse()[0]
-    sz = last_office.office_size
-    if last_office.office_type == 'in':
-        required_extenguiter = math.ceil(sz/1000) 
-    elif last_office.office_type == 'cm':
-        required_extenguiter = math.ceil(sz/3000) 
-    elif last_office.office_type == 'rs':
-        required_extenguiter = math.ceil(sz/5000) 
      
     contex = {
         'last_office': last_office,
